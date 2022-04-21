@@ -34,7 +34,7 @@ def parsepsf(path, get_tags=False):
                 taglist = psfbuf[0x10+size+5:].decode("UTF-8").rstrip("\n").split("\n")
                 for tag in taglist:
                     tagname, tagval = tag.split('=', 1)
-                    tags[tagname] = tagval
+                    tags[tagname.lower()] = tagval
 
         return (exebuf, tags)
 
