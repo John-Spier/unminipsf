@@ -15,7 +15,7 @@ goto :eof
 :do_dir
   title %1 - PSF Sets to EXEs Converter
   if exist *.psflib if not exist *.minipsf ren *.psf *.minipsf
-  for %%n in (*.minipsf) do python %bat_dir%\unminipsf_saga.py "%%n"
+  for %%n in (*.minipsf) do python %bat_dir%\unminipsf.py "%%n"
   for %%p in (*.psf) do %bat_dir%\psf2exe.exe "%%p"
   for %%q in (*.exe) do %bat_dir%\upx.exe --best --force -o"..\_UPX\%~1\%%~nq.exe" "%%q"
 goto :eof
